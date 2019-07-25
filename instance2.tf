@@ -5,6 +5,7 @@ resource "aws_instance" "default-2" {
   subnet_id = "${aws_subnet.default.id}"
   vpc_security_group_ids = ["${aws_security_group.default.id}"]
   associate_public_ip_address = true
+  private_ip = "10.0.0.22"
   key_name = "default-key-pair"
   provisioner "remote-exec" {
     connection {
